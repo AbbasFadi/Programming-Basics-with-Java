@@ -1,0 +1,29 @@
+package SimpleConditionsExamProblems;
+
+import java.util.Scanner;
+
+public class P01TransportPrice {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int distance = Integer.parseInt(scanner.nextLine());
+        String dayOrNight = scanner.nextLine();
+        double price = 0;
+        double taxiRate = 0;
+
+        if (dayOrNight.equals("day")) {
+            taxiRate = 0.79;
+        } else if (dayOrNight.equals("night")) {
+            taxiRate = 0.90;
+        }
+
+        if (distance < 20) {
+            price = 0.70 + (distance * taxiRate);
+        } else if (distance < 100) {
+            price = distance * 0.09;
+
+        } else {
+            price = distance * 0.06;
+        }
+        System.out.println(price);
+    }
+}
